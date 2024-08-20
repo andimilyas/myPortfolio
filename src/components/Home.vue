@@ -3,15 +3,9 @@
     <div class="max-w-6xl mx-auto text-center">
       <div class="w-2/3 mx-auto items-center">
         <h1 class="text-2xl font-bold">Hello Everyone, Im Andi Mohamad 🙌</h1>
-        <div class="flex w-fit items-center justify-center z-0">
-          <span
-            class="absolute mx- w-fit flex bg-gradient-to-r blur-md from-lime-600 from-50% to-lime-400 bg-clip-text text-8xl box-content font-extrabold text-transparent text-center select-none"
-          >
-            <span class="hidden">Web Developer</span> <br />
-            and Design <br />Enthusiast
-          </span>
+        <div class="flex w-fit items-center justify-center"> 
           <h1
-            class="relative top-0 w-fit h-auto justify-center flex bg-gradient-to-r items-center from-lime-600 from-50% to-lime-400 bg-clip-text text-8xl font-extrabold text-transparent text-center select-auto"
+            class="w-fit h-auto justify-center flex bg-gradient-to-r items-center from-lime-600 from-50% to-lime-400 bg-clip-text text-8xl font-extrabold text-transparent text-center select-auto"
           >
             Web Developer and Design Enthusiast
           </h1>
