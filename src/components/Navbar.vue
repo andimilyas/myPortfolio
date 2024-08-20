@@ -1,22 +1,5 @@
-<template>
-  <!-- <nav
-    class="w-full fixed top-0 bg-base-200 backdrop-filter backdrop-blur-lg bg-opacity-20 z-40"
-  >
-    <div class="navbar ">
-      <div class="navbar-start">
-        
-      </div>
-      <div class="navbar-center">
-        <ul class="flex flex-row gap-8 cursor-pointer text-base">
-          
-        </ul>
-      </div>
-      <div class="navbar-end">
-        
-      </div>
-    </div>
-  </nav> -->
-  <div class="navbar max-w-6xl mx-auto my-2">
+<template> 
+  <div class="navbar max-w-6xl mx-auto my-2 z-40">
     <div class="navbar-start">
       <div class="max-w-10">
         <router-link to="/"><img src="../asset/img/logo.png" /></router-link>
@@ -109,36 +92,58 @@
             aria-label="close sidebar"
             class="drawer-overlay"
           ></label>
-          <ul class="menu bg-base-200 text-xl min-h-full w-fit p-4">
+          <ul class="menu bg-base-200 text-xl min-h-full w-80 p-4">
             <!-- Sidebar content here -->
             <li>
-              <RouterLink to="/" class="hover:text-lime-600">Home</RouterLink>
+              <form class="p-0 my-3">
+                <label class="input input-bordered flex items-center gap-2 min-w-72">
+                  <font-awesome-icon class="text-sm" :icon="['fas', 'magnifying-glass']" />
+                  <input class="w-full" type="text" placeholder="Search" />
+                </label>
+              </form>
+            </li>
+            <li>
+              <RouterLink to="/" class="hover:text-lime-600"
+                ><font-awesome-icon
+                  class="mr-2 text-sm"
+                  :icon="['fas', 'home']"
+                />Home</RouterLink
+              >
             </li>
             <li>
               <RouterLink to="/project" class="hover:text-lime-600"
-                >Project</RouterLink
+                ><font-awesome-icon
+                  class="mr-2 text-sm"
+                  :icon="['fas', 'briefcase']"
+                />Project</RouterLink
               >
             </li>
             <li>
               <RouterLink to="/blog" class="hover:text-lime-600"
-                >Blog</RouterLink
+                ><font-awesome-icon
+                  class="mr-2 text-sm"
+                  :icon="['fas', 'newspaper']"
+                />Blog</RouterLink
               >
             </li>
             <li>
               <RouterLink to="/contact" class="hover:text-lime-600"
-                >Contact</RouterLink
+                ><font-awesome-icon
+                  class="mr-2 text-sm"
+                  :icon="['fas', 'envelope']"
+                />Contact</RouterLink
               >
             </li>
             <li>
               <details>
-                <summary>Theme</summary>
+                <summary class="hover:text-lime-600"><font-awesome-icon class="mr-2 text-sm" :icon="['fas', 'gear']" />Theme</summary>
                 <ul class="p-2">
                   <li>
                     <label class="cursor-pointer w-fit">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="16"
+                        height="16"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -158,8 +163,8 @@
                       />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="16"
+                        height="16"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -175,29 +180,7 @@
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
-              <details>
-                <summary>Search</summary>
-                <ul class="p-2">
-                  <li>
-                    <form class="w-full">
-                      <label
-                        class="input input-bordered flex items-center gap-2"
-                      >
-                        <font-awesome-icon
-                          :icon="['fas', 'magnifying-glass']"
-                        />
-                        <input
-                          type="text" 
-                          placeholder="Search"
-                        />
-                      </label>
-                    </form>
-                  </li>
-                </ul>
-              </details>
-            </li>
+            </li> 
           </ul>
         </div>
       </div>

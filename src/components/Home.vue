@@ -1,20 +1,23 @@
 <template>
-  <section class="flex flex-col bg-base-200 pt-32 pb-28">
-    <div class="max-w-6xl mx-auto text-center">
-      <div class="w-2/3 mx-auto items-center">
-        <h1 class="text-2xl font-bold">Hello Everyone, Im Andi Mohamad 🙌</h1>
-        <div class="flex w-fit items-center justify-center"> 
-          <h1
-            class="w-fit h-auto justify-center flex bg-gradient-to-r items-center from-lime-600 from-50% to-lime-400 bg-clip-text text-8xl font-extrabold text-transparent text-center select-auto"
-          >
-            Web Developer and Design Enthusiast
-          </h1>
-        </div>
+  <section class="hero bg-base-200 sm:py-16 py-10">
+    <div class="hero-content flex-col lg:flex-row min-w-6xl">
+      <div class="text-center">
+        <h1 class="text-2xl font-bold">
+          Hello Everyone, <br class="block sm:hidden" />
+          Im Andi Mohamad 🙌
+        </h1>
+        <h1
+          class="py-6 justify-center flex bg-gradient-to-r items-center from-lime-600 from-50% to-lime-400 bg-clip-text sm:text-8xl text-5xl font-extrabold text-transparent text-center select-auto"
+        >
+          Web Developer and Design Enthusiast
+        </h1>
         <p class="text-2xl py-6">
           Likes to learn new things, especially related to technology 💻💥
         </p>
-        <div class="flex flex-row justify-center gap-8">
-          <button class="btn bg-lime-600 text-neutral text-base">
+        <div class="flex sm:flex-row sm:gap-5 flex-col justify-center gap-3">
+          <button
+            class="btn bg-lime-600 hover:bg-lime-500 text-base text-neutral"
+          >
             Reach Me
           </button>
           <button class="btn btn-outline text-base">
@@ -24,29 +27,33 @@
       </div>
     </div>
   </section>
-  <section class="bg-base-200 pb-14">
-    <div class="max-w-6xl mx-auto flex flex-col">
-      <div class="text-end">
-        <h1 class="text-5xl font-bold pb-6">About Me</h1>
-        <p class="text-2xl pb-6">Self Introduction👋</p>
+  <section class="hero bg-base-200 sm:py-16 py-10 grid">
+    <div class="hero-content flex-col grid grid-cols-5 min-w-6xl">
+      <div class="sm:text-end text-center col-span-5">
+        <h1 class="sm:text-5xl text-3xl font-bold pb-6">About Me</h1>
+        <p class="sm:text-2xl text-xl pb-6">Self Introduction👋</p>
       </div>
-      <div class="flex flex-row">
-        <div class="flex justify-center items-center h-full w-full md:block">
-          <img src="../asset/img/andimoh.png" alt="" />
-        </div>
-        <div class="flex flex-col flex-1 justify-center gap-8 content-center">
+      <div class="sm:col-span-2 col-span-5">
+        <img class="" src="../asset/img/andimoh.png" alt="" />
+      </div>
+      <div class="sm:col-span-3 col-span-5">
+        <div
+          class="col-span-3 sm:col-span-1 justify-center gap-8 content-center"
+        >
           <div
-            class="bg-base-100 rounded-box p-14 text-base"
+            class="sm:bg-base-100 rounded-box sm:p-8 p-4 text-base"
             v-for="about in abouts"
           >
-            <p>
+            <p class="text-justify">
               {{ about }}
             </p>
           </div>
-          <div class="flex flex-row justify-between gap-10">
+          <div
+            class="col-span-3 sm:grid sm:grid-cols-3 gap-8 justify-between my-3 text-center"
+          >
             <div
               v-for="achievment in achievements"
-              class="bg-base-100 rounded-box box-border h-full w-full p-8 flex flex-col flex-wrap"
+              class="bg-base-100 rounded-box box-border h-full w-full p-5 my-3 content-center"
             >
               <div>
                 <h1 class="text-5xl font-bold pb-6 text-lime-600">
@@ -58,35 +65,92 @@
               </div>
             </div>
           </div>
-          <button class="btn bg-lime-600 text-neutral text-base">
-            <download-pdf-button
-              :pdf-url="pdfUrl"
-              :pdf-file-name="pdfFileName"
-            />
-          </button>
+          <div class="col-span-3 mt-8">
+            <button
+              class="w-full btn bg-lime-600 hover:bg-lime-500 text-base text-neutral"
+            >
+              <download-pdf-button
+                :pdf-url="pdfUrl"
+                :pdf-file-name="pdfFileName"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="p-20 max-w-7xl mx-auto flex flex-col">
-    <div class="text-start">
-      <h1 class="text-5xl font-bold pb-6">Experience</h1>
-      <p class="text-2xl pb-24">Work and other relevant experience📃</p>
+  <section class="hero bg-base-200 sm:py-16 py-10 grid">
+    <div class="hero-content flex-col grid grid-cols-3 min-w-6xl">
+      <div class="sm:text-start text-center col-span-3">
+        <h1 class="sm:text-5xl text-3xl font-bold pb-6">Experience</h1>
+        <p class="sm:text-2xl text-xl pb-6">
+          Work and other relevant experience📃
+        </p>
+      </div>
+      <div class="sm:col-span-3 col-span-2">
+        <ul class="timeline timeline-vertical lg:timeline-horizontal">
+          <li v-for="experience in experiences">
+            <hr />
+            <div class="timeline-start">{{ experience.year }}</div>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div
+              class="timeline-end timeline-box sm:w-64 w-40 sm:text-justify p-5"
+            >
+              {{ experience.title }}
+              <div class="dropdown dropdown-end flex mt-2">
+                <div
+                  tabindex="0"
+                  role="button"
+                  class="btn btn-ghost btn-circle btn-xs"
+                >
+                  <font-awesome-icon
+                    class="text-xs"
+                    :icon="['fas', 'chevron-down']"
+                  />
+                </div>
+                <div
+                  tabindex="0"
+                  class="card compact dropdown-content bg-base-100 rounded-box z-[1] w-64 shadow my-5"
+                >
+                  <div tabindex="0" class="card-body">
+                    <p class="text-sm mb-5">{{ experience.description }}</p>
+                    <button
+                      class="w-full btn bg-lime-600 hover:bg-lime-500 text-sm text-neutral"
+                    >
+                    <font-awesome-icon :icon="['fas', 'eye']" />Certificate</button> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </li>
+        </ul>
+      </div>
+      <!-- <carousel :items-to-show="2.5" class="col-span-3 cursor-pointer">
+        <slide
+          v-for="experience in experiences"
+          :key="slide"
+          class="flex flex-col bg-base-100 h-full rounded-box box-border"
+        >
+          <h1 class="text-2xl font-bold py-5 w-full">{{ experience.title }}</h1>
+          <p class="text-sm py-5">{{ experience.description }}</p>
+          <p class="text-md badge badge-neutral">{{ experience.year }}</p>
+        </slide> 
+      </carousel> -->
     </div>
-    <carousel :items-to-show="2.5" class="flex flex-col cursor-pointer">
-      <slide
-        v-for="experience in experiences"
-        :key="slide"
-        class="flex flex-col bg-base-100 h-full rounded-box box-border"
-      >
-        <h1 class="text-2xl font-bold py-5 w-full">{{ experience.title }}</h1>
-        <p class="text-sm py-5">{{ experience.description }}</p>
-        <p class="text-md badge badge-neutral">{{ experience.year }}</p>
-      </slide>
-      <template #addons>
-        <pagination />
-      </template>
-    </carousel>
   </section>
   <section class="bg-base-200 py-28">
     <div class="max-w-6xl mx-auto flex flex-row gap-20">
