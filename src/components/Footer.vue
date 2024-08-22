@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-neutral text-neutral-content p-5 py-8">
+  <footer class="p-5 py-8 sm:py-16">
     <div class="footer max-w-6xl mx-auto justify-between text-base">
       <div class="gap-6 basis-1/2">
         <img class="sm:w-20 sm:h-20 w-14 h-14" src="../asset/img/logo.png" alt="logo" />

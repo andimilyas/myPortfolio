@@ -79,7 +79,7 @@
       </div>
     </div>
   </section>
-  <section class="hero bg-base-200 sm:py-16 py-10 grid">
+  <section class="hero bg-base-200 pb-28 grid">
     <div class="hero-content flex-col grid grid-cols-5 min-w-6xl">
       <div class="text-center col-span-5">
         <h1 class="sm:text-5xl text-3xl font-bold pb-6">Experience</h1>
@@ -126,7 +126,9 @@
                   class="card compact dropdown-content bg-base-100 rounded-box z-[1] w-64 shadow my-5"
                 >
                   <div tabindex="0" class="card-body">
-                    <p class="text-sm mb-5">{{ experience.description }}</p>
+                    <p class="text-sm mb-5 text-justify">{{ experience.description.substring(0, 100) }}... <RouterLink class="link link-hover font-bold">
+                      more details
+                    </RouterLink> </p>
                     <button
                       class="w-full btn bg-lime-600 hover:bg-lime-500 text-sm text-neutral"
                     >
@@ -163,7 +165,7 @@
               class="bg-base-100 rounded-box box-border h-full w-full p-5 content-center"
             >
               <div class="flex justify-center">
-                <h1 class="sm:text-8xl text-6xl font-bold text-lime-600">
+                <h1 class="sm:text-8xl text-6xl font-bold text-lime-600 hover:text-lime-500 delay-150">
                   <icon :icon="skillTool.icon" />
                 </h1>
               </div>
@@ -276,6 +278,7 @@ import "vue3-carousel/dist/carousel.css";
 import project1 from "@/asset/project/project1.png";
 import project2 from "@/asset/project/project2.png";
 import project3 from "@/asset/project/project3.png";
+import { RouterLink } from "vue-router";
 
 export default {
   name: "Autoplay",
