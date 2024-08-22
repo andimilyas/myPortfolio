@@ -1,5 +1,6 @@
 <template> 
-  <div class="navbar max-w-6xl mx-auto my-2 z-40">
+<div class="fixed top-0 bg-base-200 backdrop-filter backdrop-blur-lg bg-opacity-20 navbar z-40 w-full mx-auto">
+  <div class="navbar z-40 max-w-7xl mx-auto">
     <div class="navbar-start">
       <div class="max-w-10">
         <router-link to="/"><img src="../asset/img/logo.png" /></router-link>
@@ -186,6 +187,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script></script>

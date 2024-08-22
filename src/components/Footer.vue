@@ -1,10 +1,10 @@
 <template>
-  <footer class="bg-neutral text-neutral-content p-24">
+  <footer class="bg-neutral text-neutral-content p-5 py-8">
     <div class="footer max-w-6xl mx-auto justify-between text-base">
       <div class="gap-6 basis-1/2">
-        <img class="w-20 h-20" src="../asset/img/logo.png" alt="logo" />
+        <img class="sm:w-20 sm:h-20 w-14 h-14" src="../asset/img/logo.png" alt="logo" />
         <p class="text-2xl font-bold">
-          Andi Mohamad <br />
+          Andi Mohamad <br class="sm:block hidden"/>
           Ilyas
         </p>
         <p class="text-base">Tasikmalaya, Indonesia</p>

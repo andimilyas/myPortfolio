@@ -1,5 +1,5 @@
 <template>
-  <section class="hero bg-base-200 sm:py-16 py-10">
+  <section class="hero bg-base-200 mt-16 sm:py-16 py-10">
     <div class="hero-content flex-col lg:flex-row min-w-6xl">
       <div class="text-center">
         <h1 class="text-2xl font-bold">
@@ -11,7 +11,7 @@
         >
           Web Developer and Design Enthusiast
         </h1>
-        <p class="text-2xl py-6">
+        <p class="sm:text-2xl text-xl py-6">
           Likes to learn new things, especially related to technology 💻💥
         </p>
         <div class="flex sm:flex-row sm:gap-5 flex-col justify-center gap-3">
@@ -80,14 +80,14 @@
     </div>
   </section>
   <section class="hero bg-base-200 sm:py-16 py-10 grid">
-    <div class="hero-content flex-col grid grid-cols-3 min-w-6xl">
-      <div class="sm:text-start text-center col-span-3">
+    <div class="hero-content flex-col grid grid-cols-5 min-w-6xl">
+      <div class="text-center col-span-5">
         <h1 class="sm:text-5xl text-3xl font-bold pb-6">Experience</h1>
         <p class="sm:text-2xl text-xl pb-6">
           Work and other relevant experience📃
         </p>
       </div>
-      <div class="sm:col-span-3 col-span-2">
+      <div class="col-span-5">
         <ul class="timeline timeline-vertical lg:timeline-horizontal">
           <li v-for="experience in experiences">
             <hr />
@@ -130,7 +130,8 @@
                     <button
                       class="w-full btn bg-lime-600 hover:bg-lime-500 text-sm text-neutral"
                     >
-                    <font-awesome-icon :icon="['fas', 'eye']" />Certificate</button> 
+                      <font-awesome-icon :icon="['fas', 'eye']" />Certificate
+                    </button>
                   </div>
                 </div>
               </div>
@@ -139,95 +140,132 @@
           </li>
         </ul>
       </div>
-      <!-- <carousel :items-to-show="2.5" class="col-span-3 cursor-pointer">
-        <slide
-          v-for="experience in experiences"
-          :key="slide"
-          class="flex flex-col bg-base-100 h-full rounded-box box-border"
-        >
-          <h1 class="text-2xl font-bold py-5 w-full">{{ experience.title }}</h1>
-          <p class="text-sm py-5">{{ experience.description }}</p>
-          <p class="text-md badge badge-neutral">{{ experience.year }}</p>
-        </slide> 
-      </carousel> -->
     </div>
   </section>
-  <section class="bg-base-200 py-28">
-    <div class="max-w-6xl mx-auto flex flex-row gap-20">
-      <div class="content-center grid grid-col w-3/4">
-        <h1 class="text-5xl font-bold pb-6">Tools & Skills</h1>
-        <p class="text-2xl">Some of the skills and tools that I use✒</p>
+  <section class="hero bg-base-200 sm:py-16 py-10 grid">
+    <div class="hero-content flex-col grid grid-cols-5 min-w-6xl">
+      <div class="sm:col-span-2 text-center sm:text-start col-span-5 sm:mr-10">
+        <h1 class="sm:text-5xl text-3xl font-bold pb-6">Tools & Skills</h1>
+        <p class="sm:text-2xl text-xl pb-6">
+          Some tools and skills that <br class="sm:hidden" />
+          i have used🧰
+        </p>
       </div>
-      <div class="flex flex-wrap justify-end gap-5 items-end">
+      <div class="sm:col-span-3 col-span-5">
         <div
-          class="bg-base-100 rounded-box box-border h-40 w-40"
-          v-for="skillTool in skillsTools"
+          class="col-span-3 sm:col-span-1 justify-center gap-5 content-center"
         >
           <div
-            class="flex flex-col flex-wrap justify-center items-center h-full w-full"
+            class="grid grid-cols-3 sm:grid sm:grid-cols-4 gap-5 justify-between text-center"
           >
-            <div class="text-8xl font-bold text-lime-600">
-              <icon :icon="skillTool.icon" />
+            <div
+              v-for="skillTool in skillsTools"
+              class="bg-base-100 rounded-box box-border h-full w-full p-5 content-center"
+            >
+              <div class="flex justify-center">
+                <h1 class="sm:text-8xl text-6xl font-bold text-lime-600">
+                  <icon :icon="skillTool.icon" />
+                </h1>
+              </div>
+              <div>
+                <p class="text-base hidden sm:block">{{ skillTool.name }}</p>
+              </div>
             </div>
-            <p>{{ skillTool.name }}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="pt-14 p-20 max-w-7xl mx-auto">
-    <div class="w-full mx-auto flex flex-col">
-      <div class="text-center">
-        <h1 class="text-5xl font-bold pb-6">Selected Project</h1>
-        <p class="text-2xl pb-24">Some project that I have created💻</p>
-      </div>
-      <carousel :items-to-show="2" class="flex flex-col cursor-pointer">
-        <slide
-          v-for="project in projects"
-          :key="index"
-          class="flex flex-col bg-base-100"
-        >
-          <img v-bind:src="project.img" alt="" />
-          <h1 class="text-2xl font-bold pt-2 w-full">{{ project.title }}</h1>
-          <p class="text-sm py-3">{{ project.description }}</p>
-          <p class="text-md badge badge-neutral">{{ project.tech }}</p>
-          <div class="flex flex-row justify-center py-7 gap-4">
-            <div class="btn bg-lime-600 text-neutral text-sm">
-              <a v-bind:href="project.link1" target="_blank">Github</a>
-              <font-awesome-icon class="text-xl" :icon="['fab', 'github']" />
-            </div>
-            <div class="btn bg-outline text-sm">
-              <a v-bind:href="project.link2" target="_blank">Open</a>
-              <font-awesome-icon class="text-xl" :icon="['fas', 'paperclip']" />
-            </div>
-          </div>
-        </slide>
-
-        <template #addons>
-          <pagination class="pt-5" />
-        </template>
-      </carousel>
-    </div>
-  </section>
-  <section class="hero bg-base-200 py-28">
-    <div class="hero-content text-center">
-      <div class="max-w-6xl mx-auto">
-        <h1 class="text-7xl font-bold py-6 text-lime-600">
-          Lets Work Together
-        </h1>
-        <p class="text-2xl pb-12">
-          For interactive communication, please contact me👇
+  <section class="hero bg-base-200 sm:py-16 py-10 grid">
+    <div class="hero-content flex-col grid grid-cols-5 min-w-6xl">
+      <div class="text-center col-span-5">
+        <h1 class="sm:text-5xl text-3xl font-bold pb-6">Selected Project</h1>
+        <p class="sm:text-2xl text-xl pb-6">
+          Some project that I have created💻
         </p>
-        <div class="flex flex-row justify-center gap-8">
-          <a href="https://wa.me/6285352575367" target="_blank"
-            ><button class="btn bg-lime-600 text-neutral text-base">
-              <font-awesome-icon :icon="['fab', 'whatsapp']" />Whatsapp
-            </button></a
+      </div>
+      <div class="col-span-5">
+        <carousel :items-to-show="2.5" class="flex-col cursor-pointer hidden sm:block">
+          <slide
+            v-for="project in projects"
+            :key="index"
+            class="flex flex-col my-5"
           >
-        </div>
+            <img v-bind:src="project.img" alt="" />
+            <div class="mx-5">
+              <h1 class="text-2xl font-bold pt-2 w-full">{{ project.title }}</h1>
+              <p class="text-sm py-3">{{ project.description }}</p>
+              <p class="text-md badge badge-neutral mb-5">{{ project.tech }}</p>
+              <div class="flex flex-row justify-center gap-4 mb-8">
+                <div class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-sm">
+                  <a v-bind:href="project.link1" target="_blank">Github</a>
+                  <font-awesome-icon class="text-xl" :icon="['fab', 'github']" />
+                </div>
+                <div class="btn btn-outline text-sm">
+                  <a v-bind:href="project.link2" target="_blank">Open</a>
+                  <font-awesome-icon
+                    class="text-xl"
+                    :icon="['fas', 'paperclip']"
+                  />
+                </div>
+              </div>
+            </div>
+          </slide> 
+          <template #addons>
+            <pagination class="pt-5" />
+          </template>
+        </carousel>
+        <carousel :items-to-show="1" class="flex-col cursor-pointer sm:hidden block rounded-box">
+          <slide
+            v-for="project in projects"
+            :key="index"
+            class="flex flex-col"
+          >
+            <img v-bind:src="project.img" alt="" />
+            <h1 class="text-xl font-bold pt-2 w-full mb-3">{{ project.title }}</h1> 
+            <p class="text-md badge badge-neutral mb-5">{{ project.tech }}</p>
+            <div class="flex flex-row justify-center gap-4 mb-8">
+              <div class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-sm">
+                <a v-bind:href="project.link1" target="_blank">Github</a>
+                <font-awesome-icon class="text-xl" :icon="['fab', 'github']" />
+              </div>
+              <div class="btn btn-outline text-sm">
+                <a v-bind:href="project.link2" target="_blank">Open</a>
+                <font-awesome-icon
+                  class="text-xl"
+                  :icon="['fas', 'paperclip']"
+                />
+              </div>
+            </div>
+          </slide> 
+          <template #addons>
+            <pagination class="pt-5" />
+          </template>
+        </carousel>
       </div>
     </div>
   </section>
+  <section class="hero bg-base-200 sm:py-16 pb-16">
+    <div class="hero-content flex-col lg:flex-row min-w-6xl">
+      <div class="hero-content text-center">
+        <div class="max-w-6xl mx-auto">
+          <h1 class="sm:text-7xl text-5xl font-bold py-6 text-lime-600">
+            Lets Work Together
+          </h1>
+          <p class="sm:text-2xl text-xl pb-10">
+            For interactive communication, please contact me👇
+          </p>
+          <div class="flex flex-row justify-center gap-8">
+            <a href="https://wa.me/6285352575367" target="_blank"
+              ><button class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-base">
+                <font-awesome-icon :icon="['fab', 'whatsapp']" />Whatsapp
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
 </template>
 
 <script>
@@ -394,7 +432,7 @@ const projects = [
     title: "Review Film API",
     description:
       "Backend Application for a movie review website. The application allows users to search for movies and add their reviews.",
-    tech: "Backend development",
+    tech: "Backend Development",
     link1: "https://documenter.getpostman.com/view/32583135/2sA3XY6y4t",
   },
 ];
