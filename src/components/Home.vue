@@ -15,14 +15,16 @@
           Likes to learn new things, especially related to technology 💻💥
         </p>
         <div class="flex sm:flex-row sm:gap-5 flex-col justify-center gap-3">
-          <button
-            class="btn bg-lime-600 hover:bg-lime-500 text-base text-neutral"
-          >
-            Reach Me
-          </button>
-          <button class="btn btn-outline text-base">
-            View Project <font-awesome-icon :icon="['fas', 'eye']" />
-          </button>
+          <RouterLink to="/contact">
+            <button
+              class="btn bg-lime-600 hover:bg-lime-500 text-base text-neutral"
+            >
+              Reach Me
+            </button>
+          </RouterLink>
+          <RouterLink to="/project">
+            <button class="btn btn-outline text-base">See Projects <font-awesome-icon :icon="['fas', 'eye']" /></button>
+          </RouterLink> 
         </div>
       </div>
     </div>
@@ -107,7 +109,7 @@
               </svg>
             </div>
             <div
-              class="timeline-end timeline-box sm:w-64 w-40 sm:text-justify p-5"
+              class="timeline-end timeline-box sm:w-56 w-40 sm:text-justify p-5"
             >
               {{ experience.title }}
               <div class="dropdown dropdown-end flex mt-2">
@@ -165,7 +167,7 @@
               class="bg-base-100 rounded-box box-border h-full w-full p-5 content-center"
             >
               <div class="flex justify-center">
-                <h1 class="sm:text-8xl text-6xl font-bold text-lime-600 hover:text-lime-500 delay-150">
+                <h1 class="sm:text-8xl md:text-6xl text-6xl font-bold text-lime-600 hover:text-lime-500 delay-150">
                   <icon :icon="skillTool.icon" />
                 </h1>
               </div>
@@ -278,6 +280,7 @@ import "vue3-carousel/dist/carousel.css";
 import project1 from "@/asset/project/project1.png";
 import project2 from "@/asset/project/project2.png";
 import project3 from "@/asset/project/project3.png";
+import project4 from "@/asset/project/project4.png";
 import { RouterLink } from "vue-router";
 
 export default {
@@ -409,19 +412,35 @@ const experiences = [
     description:
       "Start the UX Design Process: Empathize, Define, Ideate and Test try Initial Concept Create Designs and High-Fidelity Prototype in Figma Web Designing Responsive in Adobe XD.",
   },
+  {
+    id: 4,
+    title: "Full Stack Developer (Sanbercode) - Disnakertrans",
+    year: "2024",
+    description:
+      "Learn about fundamental of PHP and Javascript, Implementing Laravel, Vue Js until deployment and supporting technologies such as git for managing code resource storage, Test back end app with Postman for fixed the API, Create book lending project, platform for movie reviews, and a personal website using Laravel and Vue Js",
+  },
 ];
 const projects = [
   {
     id: 1,
     img: project2,
-    title: "Company Landing Page",
+    title: "Pustaka App",
     description:
-      "Implementation of responsive web development using native CSS. A landing page for a company operating in the agricultural sector.",
-    tech: "Front End Development",
-    link1: "https://github.com/andimilyas/iFarmery",
-  },
+      "I developed a dynamic book lending application using Vue Js that allows users to browse books with features like filtering by category, viewing book details, and most importantly, borrowing books at a specified time.",
+    tech: "Full Stack Development",
+    link1: "https://github.com/andimilyas/fe-pustaka",
+  }, 
   {
     id: 2,
+    img: project4,
+    title: "Company Landing Page",
+    description:
+      "This is a landing page for a company. The page contains information about the company, services and contact details.",
+    tech: "Frontend Development",
+    link1: "https://github.com/andimilyas/ifarmery",
+  },
+  {
+    id: 3,
     img: project1,
     title: "Fateka App",
     description:
@@ -430,7 +449,7 @@ const projects = [
     link1: "https://github.com/armaind/fateka",
   },
   {
-    id: 3,
+    id: 4,
     img: project3,
     title: "Review Film API",
     description:
