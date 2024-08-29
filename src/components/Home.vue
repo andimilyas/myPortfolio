@@ -480,7 +480,7 @@ const projects = [
       "I developed a dynamic book lending application using Vue Js that allows users to browse books with features like filtering by category, viewing book details, and most importantly, borrowing books at a specified time.",
     tech: "Full Stack Development",
     link1: "https://github.com/andimilyas/fe-pustaka",
-    link2: "https://pustaka.vercel.app/"
+    link2: "https://pustaka-one.vercel.app/"
   },
 ];
 </script>
