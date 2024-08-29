@@ -15,12 +15,12 @@
           class="flex flex-col cursor-pointer h-full"
         >
           <slide
-            v-for="project in projects"
+            v-for="carousel in carousels"
             :key="index"
             class="h-full rounded-box box-border"
           >
             <div class="mx-auto">
-              <img class="pb-9" v-bind:src="project.img" alt="" />
+              <img class="pb-9" v-bind:src="carousel.img" alt="" />
             </div>
           </slide>
         </carousel>
@@ -90,13 +90,17 @@
 </template>
 <script>
 import { defineComponent } from "vue";
-import { Carousel, Pagination, Slide } from "vue3-carousel";
+import { Carousel, Slide } from "vue3-carousel";
 import img1 from "@/asset/img/img1.png";
 import img2 from "@/asset/img/img2.png";
 import img3 from "@/asset/img/img3.png";
+import img4 from "@/asset/img/img4.png";
+import carousel1 from "@/asset/img/carousel1.png";
+import carousel2 from "@/asset/img/carousel2.png";
+import carousel3 from "@/asset/img/carousel3.png";
+import carousel4 from "@/asset/img/carousel4.png";
 
-import "vue3-carousel/dist/carousel.css";
-import { icon } from "@fortawesome/fontawesome-svg-core";
+import "vue3-carousel/dist/carousel.css"; 
 
 export default defineComponent({
   name: "Autoplay",
@@ -108,6 +112,24 @@ export default defineComponent({
 </script>
 
 <script setup>
+const carousels = [
+  {
+    id: 1,
+    img: carousel1, 
+  },
+  {
+    id: 2,
+    img: carousel2, 
+  },
+  {
+    id: 3,
+    img: carousel3, 
+  },
+  {
+    id: 4,
+    img: carousel4, 
+  },
+]
 const projects = [
   {
     id: 1,
@@ -115,7 +137,8 @@ const projects = [
     title: "Fateka App",
     description:
       "A website-based application, this platform acts as an information service and alumni interaction medium.",
-    link1: "https://github.com/armaind/fateka",
+    link1: "https://github.com/andimilyas/fateka",
+    link2: "#",
   },
   {
     id: 2,
@@ -123,7 +146,8 @@ const projects = [
     title: "Company Landing Page",
     description:
       "Implementation of responsive web development using native CSS. A landing page for a company operating in the agricultural sector.",
-    link1: "https://github.com/andimilyas/iFarmery",
+    link1: "https://github.com/andimilyas/ifarmery",
+    link2: "https://ifarmery.vercel.app/",
   },
 
   {
@@ -133,6 +157,15 @@ const projects = [
     description:
       "Backend Application for a movie review website. The application allows users to search for movies and add their reviews.",
     link1: "https://documenter.getpostman.com/view/32583135/2sA3XY6y4t",
+  },
+  {
+    id: 4,
+    img: img4,
+    title: "Pustaka App",
+    description:
+      "I developed a dynamic book lending application using Vue Js that allows users to browse books with features like filtering by category, viewing book details, and most importantly, borrowing books at a specified time.",
+    link1: "https://github.com/andimilyas/fe-pustaka",
+    link2: "https://pustaka.vercel.app/",
   },
 ];
 </script>

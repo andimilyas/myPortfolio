@@ -23,8 +23,10 @@
             </button>
           </RouterLink>
           <RouterLink to="/project">
-            <button class="btn btn-outline text-base">See Projects <font-awesome-icon :icon="['fas', 'eye']" /></button>
-          </RouterLink> 
+            <button class="btn btn-outline text-base">
+              See Projects <font-awesome-icon :icon="['fas', 'eye']" />
+            </button>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -128,9 +130,12 @@
                   class="card compact dropdown-content bg-base-100 rounded-box z-[1] w-64 shadow my-5"
                 >
                   <div tabindex="0" class="card-body">
-                    <p class="text-sm mb-5 text-justify">{{ experience.description.substring(0, 100) }}... <RouterLink class="link link-hover font-bold">
-                      more details
-                    </RouterLink> </p>
+                    <p class="text-sm mb-5 text-justify">
+                      {{ experience.description.substring(0, 100) }}...
+                      <RouterLink class="link link-hover font-bold">
+                        more details
+                      </RouterLink>
+                    </p>
                     <button
                       class="w-full btn bg-lime-600 hover:bg-lime-500 text-sm text-neutral"
                     >
@@ -167,7 +172,9 @@
               class="bg-base-100 rounded-box box-border h-full w-full p-5 content-center"
             >
               <div class="flex justify-center">
-                <h1 class="sm:text-8xl md:text-6xl text-6xl font-bold text-lime-600 hover:text-lime-500 delay-150">
+                <h1
+                  class="sm:text-8xl md:text-6xl text-6xl font-bold text-lime-600 hover:text-lime-500 delay-150"
+                >
                   <icon :icon="skillTool.icon" />
                 </h1>
               </div>
@@ -189,7 +196,10 @@
         </p>
       </div>
       <div class="col-span-5">
-        <carousel :items-to-show="2.5" class="flex-col cursor-pointer hidden sm:block">
+        <carousel
+          :items-to-show="2.5"
+          class="flex-col cursor-pointer hidden sm:block"
+        >
           <slide
             v-for="project in projects"
             :key="index"
@@ -197,13 +207,20 @@
           >
             <img v-bind:src="project.img" alt="" />
             <div class="mx-5">
-              <h1 class="text-2xl font-bold pt-2 w-full">{{ project.title }}</h1>
+              <h1 class="text-2xl font-bold pt-2 w-full">
+                {{ project.title }}
+              </h1>
               <p class="text-sm py-3">{{ project.description }}</p>
               <p class="text-md badge badge-neutral mb-5">{{ project.tech }}</p>
               <div class="flex flex-row justify-center gap-4 mb-8">
-                <div class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-sm">
+                <div
+                  class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-sm"
+                >
                   <a v-bind:href="project.link1" target="_blank">Github</a>
-                  <font-awesome-icon class="text-xl" :icon="['fab', 'github']" />
+                  <font-awesome-icon
+                    class="text-xl"
+                    :icon="['fab', 'github']"
+                  />
                 </div>
                 <div class="btn btn-outline text-sm">
                   <a v-bind:href="project.link2" target="_blank">Open</a>
@@ -214,22 +231,25 @@
                 </div>
               </div>
             </div>
-          </slide> 
+          </slide>
           <template #addons>
             <pagination class="pt-5" />
           </template>
         </carousel>
-        <carousel :items-to-show="1" class="flex-col cursor-pointer sm:hidden block rounded-box">
-          <slide
-            v-for="project in projects"
-            :key="index"
-            class="flex flex-col"
-          >
+        <carousel
+          :items-to-show="1"
+          class="flex-col cursor-pointer sm:hidden block rounded-box"
+        >
+          <slide v-for="project in projects" :key="index" class="flex flex-col">
             <img v-bind:src="project.img" alt="" />
-            <h1 class="text-xl font-bold pt-2 w-full mb-3">{{ project.title }}</h1> 
+            <h1 class="text-xl font-bold pt-2 w-full mb-3">
+              {{ project.title }}
+            </h1>
             <p class="text-md badge badge-neutral mb-5">{{ project.tech }}</p>
             <div class="flex flex-row justify-center gap-4 mb-8">
-              <div class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-sm">
+              <div
+                class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-sm"
+              >
                 <a v-bind:href="project.link1" target="_blank">Github</a>
                 <font-awesome-icon class="text-xl" :icon="['fab', 'github']" />
               </div>
@@ -241,7 +261,7 @@
                 />
               </div>
             </div>
-          </slide> 
+          </slide>
           <template #addons>
             <pagination class="pt-5" />
           </template>
@@ -261,7 +281,9 @@
           </p>
           <div class="flex flex-row justify-center gap-8">
             <a href="https://wa.me/6285352575367" target="_blank"
-              ><button class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-base">
+              ><button
+                class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-base"
+              >
                 <font-awesome-icon :icon="['fab', 'whatsapp']" />Whatsapp
               </button></a
             >
@@ -269,7 +291,7 @@
         </div>
       </div>
     </div>
-  </section> 
+  </section>
 </template>
 
 <script>
@@ -423,39 +445,42 @@ const experiences = [
 const projects = [
   {
     id: 1,
-    img: project2,
-    title: "Pustaka App",
-    description:
-      "I developed a dynamic book lending application using Vue Js that allows users to browse books with features like filtering by category, viewing book details, and most importantly, borrowing books at a specified time.",
-    tech: "Full Stack Development",
-    link1: "https://github.com/andimilyas/fe-pustaka",
-  }, 
-  {
-    id: 2,
-    img: project4,
-    title: "Company Landing Page",
-    description:
-      "This is a landing page for a company. The page contains information about the company, services and contact details.",
-    tech: "Frontend Development",
-    link1: "https://github.com/andimilyas/ifarmery",
-  },
-  {
-    id: 3,
     img: project1,
     title: "Fateka App",
     description:
       "A website-based application, this platform acts as an information service and alumni interaction medium.",
     tech: "Full Stack Development",
-    link1: "https://github.com/armaind/fateka",
-  },
+    link1: "https://github.com/andimilyas/fateka",
+    link2: "#"
+  }, 
   {
-    id: 4,
+    id: 2,
+    img: project2,
+    title: "Company Landing Page",
+    description:
+      "This is a landing page for a company. The page contains information about the company, services and contact details.",
+    tech: "Frontend Development",
+    link1: "https://github.com/andimilyas/ifarmery",
+    link2: "https://ifarmery.vercel.app/"
+  }, 
+  {
+    id: 3,
     img: project3,
     title: "Review Film API",
     description:
       "Backend Application for a movie review website. The application allows users to search for movies and add their reviews.",
     tech: "Backend Development",
     link1: "https://documenter.getpostman.com/view/32583135/2sA3XY6y4t",
+  },
+  {
+    id: 4,
+    img: project4,
+    title: "Pustaka App",
+    description:
+      "I developed a dynamic book lending application using Vue Js that allows users to browse books with features like filtering by category, viewing book details, and most importantly, borrowing books at a specified time.",
+    tech: "Full Stack Development",
+    link1: "https://github.com/andimilyas/fe-pustaka",
+    link2: "https://pustaka.vercel.app/"
   },
 ];
 </script>
