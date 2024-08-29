@@ -30,8 +30,8 @@
       <div class="justify-end px-5 hidden lg:flex">
         <form class="max-w-40 mx-auto">
           <label class="input input-bordered flex items-center gap-2">
-            <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
-            <input type="text" class="max-w-20" placeholder="Search" />
+            <font-awesome-icon class="text-xs" :icon="['fas', 'magnifying-glass']" />
+            <input type="text" class="max-w-20 text-sm" placeholder="Search" />
           </label>
         </form>
       </div>
@@ -98,8 +98,8 @@
             <li>
               <form class="p-0 my-3">
                 <label class="input input-bordered flex items-center gap-2 min-w-72">
-                  <font-awesome-icon class="text-sm" :icon="['fas', 'magnifying-glass']" />
-                  <input class="w-full" type="text" placeholder="Search" />
+                  <font-awesome-icon class="text-xs" :icon="['fas', 'magnifying-glass']" />
+                  <input class="w-full text-sm" type="text" placeholder="Search" />
                 </label>
               </form>
             </li>

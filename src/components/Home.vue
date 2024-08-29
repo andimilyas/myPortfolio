@@ -17,13 +17,13 @@
         <div class="flex sm:flex-row sm:gap-5 flex-col justify-center gap-3">
           <RouterLink to="/contact">
             <button
-              class="btn bg-lime-600 hover:bg-lime-500 text-base text-neutral"
+              class="btn bg-lime-600 hover:bg-lime-500 text-base text-neutral w-full"
             >
               Reach Me
             </button>
           </RouterLink>
           <RouterLink to="/project">
-            <button class="btn btn-outline text-base">
+            <button class="btn btn-outline text-base w-full">
               See Projects <font-awesome-icon :icon="['fas', 'eye']" />
             </button>
           </RouterLink>

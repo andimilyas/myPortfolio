@@ -2,17 +2,11 @@
   <section class="flex flex-col bg-base-200 py-28">
     <div class="max-w-6xl mx-auto text-center flex flex-col">
       <div class="flex justify-center flex-col">
-        <h1
-          class="pb-6 items-center text-5xl font-bold text-center select-auto"
-        >
-          Featured Project
-        </h1>
-        <p class="text-2xl pb-12">Some project that I have created🖱</p>
         <carousel
           :items-to-show="1"
           :autoplay="8000"
           :wrap-around="true"
-          class="flex flex-col cursor-pointer h-full"
+          class="sm:flex flex-col cursor-pointer h-full hidden"
         >
           <slide
             v-for="carousel in carousels"
@@ -25,7 +19,17 @@
           </slide>
         </carousel>
       </div>
-      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-9">
+      <div class="flex justify-center flex-col">
+        <h1
+          class="sm:text-5xl text-3xl pb-6 sm:pt-12 items-center font-bold sm:text-start text-center select-auto"
+        >
+          Featured Project
+        </h1>
+        <p class="sm:text-2xl text-xl pb-12 sm:text-start text-center">
+          Some project that I have created🖱
+        </p>
+      </div>
+      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-9 sm:mx-0 mx-5">
         <div
           class="box-border rounded-box flex flex-col"
           v-for="project in projects"
@@ -34,23 +38,52 @@
           <img v-bind:src="project.img" alt="" />
           <div class="flex flex-col justify-between p-3">
             <div class="flex flex-col text-start">
-              <h3 class="text-2xl font-bold text-lime-600">
-                {{ project.title }}
-              </h3>
+              <div class="flex flex-row w-full justify-start">
+                <div class="w-full">
+                  <h3 class="text-2xl font-bold text-lime-600">
+                    {{ project.title }}
+                  </h3>
+                </div>
+                <div class="flex sm:hidden flex-row gap-4">
+                  <div class="text-xs content-center">
+                    <a v-bind:href="project.link3" target="_blank">
+                      <font-awesome-icon
+                        class="text-xl cursor-pointer"
+                        :icon="['fas', 'star']"
+                    /></a>
+                  </div>
+                  <div class="text-xs content-center">
+                    <a v-bind:href="project.link3" target="_blank">
+                      <font-awesome-icon
+                        class="text-xl cursor-pointer"
+                        :icon="['fas', 'comment']"
+                    /></a>
+                  </div>
+                  <div class="text-xs content-center">
+                    <a v-bind:href="project.link3" target="_blank">
+                      <font-awesome-icon
+                        class="text-xl cursor-pointer"
+                        :icon="['fas', 'share']"
+                    /></a>
+                  </div>
+                </div>
+              </div>
               <p class="text-sm py-3">
                 {{ project.description }}
               </p>
             </div>
-            <div class="flex flex-row justify-between h-full pt-5">
-              <div class="flex flex-row gap-5">
-                <div class="btn bg-lime-600 text-neutral text-sm">
+            <div class="flex sm:flex-row flex-col justify-between h-full pt-5">
+              <div class="flex sm:flex-row flex-col w-full sm:gap-5 gap-3">
+                <div
+                  class="btn bg-lime-600 hover:bg-lime-500 text-neutral text-base"
+                >
                   <a v-bind:href="project.link1" target="_blank">Github</a>
                   <font-awesome-icon
                     class="text-xl"
                     :icon="['fab', 'github']"
                   />
                 </div>
-                <div class="btn bg-outline text-sm">
+                <div class="btn btn-outline text-base">
                   <a v-bind:href="project.link2" target="_blank">Open</a>
                   <font-awesome-icon
                     class="text-xl"
@@ -58,7 +91,7 @@
                   />
                 </div>
               </div>
-              <div class="flex flex-row gap-8">
+              <div class="flex-row gap-8 hidden sm:flex">
                 <div class="text-sm content-center">
                   <a v-bind:href="project.link3" target="_blank">
                     <font-awesome-icon
@@ -100,7 +133,7 @@ import carousel2 from "@/asset/img/carousel2.png";
 import carousel3 from "@/asset/img/carousel3.png";
 import carousel4 from "@/asset/img/carousel4.png";
 
-import "vue3-carousel/dist/carousel.css"; 
+import "vue3-carousel/dist/carousel.css";
 
 export default defineComponent({
   name: "Autoplay",
@@ -115,21 +148,21 @@ export default defineComponent({
 const carousels = [
   {
     id: 1,
-    img: carousel1, 
+    img: carousel1,
   },
   {
     id: 2,
-    img: carousel2, 
+    img: carousel2,
   },
   {
     id: 3,
-    img: carousel3, 
+    img: carousel3,
   },
   {
     id: 4,
-    img: carousel4, 
+    img: carousel4,
   },
-]
+];
 const projects = [
   {
     id: 1,
